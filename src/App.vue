@@ -17,7 +17,12 @@ export default {
         if (this.$route.path !== '/login') 
           this.$router.push('/login')
     }
-  }
+  }/*,
+  beforeRouteUpdate (to, from, next) {
+    if (to === '/home') 
+      next('/home/hello');
+    next();
+  }*/
 }
 </script>
 

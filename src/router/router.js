@@ -4,11 +4,13 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 export default new VueRouter({
+  mode: 'history',
   routes: [
+    { path: '/home', redirect: '/home/hello' },
     { path: '/login',
       component: () => import('@/components/Login')
     },
-    { path: '/home',
+    { path: '/home', 
       component: () => import('@/components/Home'),
       children: [
         {
@@ -24,6 +26,7 @@ export default new VueRouter({
           component: () => import('@/components/HelloWorld'),
         }
       ]
-    }
+    },
+    { path: '*', redirect: '/home/hello' },
   ]
 })

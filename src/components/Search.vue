@@ -51,7 +51,7 @@ export default {
 
     /*axios.post('http://192.168.6.132:8080/hrcont/api/v1/getCostiRisorsaPeriodo',
               { codiceRisorsa: this.resource, anno: this.year, periodo: this.month, tipoPeriodo: "C" })*/
-    axios.get("./sample.json")
+    axios.get("/sample.json")
       .then( response => {
         this.showLoad = true;
         this.$store.state.infoResource = response;
